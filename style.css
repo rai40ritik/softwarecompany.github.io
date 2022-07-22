@@ -1,0 +1,349 @@
+
+
+html{
+    scroll-behavior: smooth;
+}
+
+
+.template{
+    padding-bottom: 50px;
+}
+/********************************** navbar css**************** */
+.navbar{
+    background-color: #213875;
+    
+    }
+    .collapse ul li a{
+        color:white;
+        font-weight: bold;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+    .collapse ul li a:hover{
+        color: red;
+        /* text-decoration: underline; */
+        transition: 0.5s;
+        /* border: 1px solid black; */
+        
+    }
+
+.freelencer{
+    background-color: #213875;
+    
+
+}
+.form-controls{
+    background-color: #fff;
+    padding: 10px;
+}
+#name{
+    color: white;
+    font-weight: bold;
+    padding: 10px;
+}
+.form-controls:hover{
+    border: 2px solid rgb(240, 28, 127);
+}
+/* .btns{
+    
+    padding: 10px;
+    margin-left: 20px;
+    width: 200px;
+    
+} */
+/************************************* nav bar end here********************** */
+
+
+/* *************************************three extra div start here************************************ */
+
+    .extra-div{
+        background-color: #fff;
+        border: medium none;
+        padding: 40px! important;
+        border-radius: 3px;
+        transition: 0.3s;
+    }
+    .extra-div h2{
+        /* font-size: 0.9rem; */
+        margin: 20px 0 15px 0;
+        font-weight: bold;
+        line-height: 1.1;
+        word-spacing: 4px;
+    }
+    .extra-div:hover{
+        box-shadow: 0 0 20px 0 rgba(0,0,0,0.3);
+        transform: translateY(-10px);
+        background-color: rgb(16, 31, 95);
+        color: white;
+        
+    }   
+
+
+    
+    /****************************************** Extra div end here **********************************/
+
+
+
+/* three extra div start  */
+.threediv{
+    padding-top: 100px;
+    background-color:#213875;
+    height:auto;
+    margin-bottom: 100px;
+    
+}
+
+.three-div{
+    padding-bottom:50px;
+}
+
+.three-div h4{
+    padding: 10px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: white;
+}
+.three-div p{
+    color: rgb(207, 201, 201);
+    
+}
+.temp{
+    color: white;
+    font-weight: b;
+}
+.rahul{
+    color:rgb(235, 4, 4) ! important;
+}
+/* three extra div start  */
+
+/* about me css here */
+/* .img{
+    padding-top:200px;
+} */
+.img h1{
+    font-weight: bold;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color:darkblue ;
+}
+.img h3{
+    font-size: 20px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: bold;
+    color: darkblue;
+}
+.img p{
+    color: #12145c;
+    padding: 20px;
+    
+}
+/* about me css end here */
+
+.art p{
+    margin-bottom: 70px; 
+    font-size: 18px;
+    color: #12145c;
+}
+.art ul li{
+    margin: 20px;
+    padding-top: 5px;
+    color: #0e107c;
+    
+}
+ .heigh{
+     height: 600px;
+ }
+ /* clients css start */
+.clients{
+    padding-top: 120px;
+    padding-bottom: 50px;
+    
+    
+    background-color: #213875;
+}
+.clinets-div p{
+    color: rgb(230, 224, 224);
+    /* font-weight: bold; */
+    /* padding: 20px; */
+    font-size: 18;
+    line-height: 30px;
+}
+ 
+
+
+ /* work css start */
+ .map{
+     height: 150px;
+     width: 180px;
+     float: right;
+     color: #213875;
+     
+ }
+ .work-div p{
+     line-height: 30px;
+ }
+ /* work css end */
+
+ /* <!--********************************latest update  css code here start************************************ --> */
+.featherdiv{
+    background-color: #ccdee2;
+    padding-top: 100px;
+}
+
+
+ /* .feather{
+
+    border-radius: 1px solid black;
+} */
+.feather-work{
+    border-radius: 3px;
+    transition: 0.3s;
+    
+}
+.feather-work:hover{
+    box-shadow: 0 0 20px 0 rgba(0,0,0,0.3);
+    transform: translateY(-10px);
+    /* background-color: rgb(16, 31, 95); */
+    color: white;transition: transform .2s;
+} 
+.feather-work p{
+    color: rgb(0, 67, 252);
+    font-size: 16px;
+}
+.feather-work h4{
+    color: darkblue;
+}
+
+/* contact css */
+
+.contactbg{
+   background-color: #090b4d; 
+   margin-left: 0px;  
+}
+.form-group{
+    color: rgb(236, 221, 221);
+    font-weight: bold;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    padding: 20px;  
+}
+.form-groups{
+    font-weight: bold;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    padding: 20px;
+}
+#name{
+    border: 2px solid white;
+    background-color: #090b4d;
+}
+#name:hover{
+    background-color: #fff;
+    color: black;
+
+}
+.submit{
+    padding: 10px;
+    width: 150px;
+    border: 2px solid white;
+    background-color: #090b4d;
+    
+    font-weight: bold;
+    margin-bottom: 45px;
+}
+.submit:hover{
+    background-color: #fff;
+}
+/* .ritikrai{
+    margin-left: 150px;
+    margin-right: 150px;
+} */
+
+
+/* newslatter start */
+
+.newsletter{
+    width: 100%;
+    height: auto;
+    margin: 80px auto;
+}
+
+/* .news-input{
+    border-radius: 100px 0 0 100px! important;
+    min-width: 150px;
+    min-height: 45px;
+
+} */
+.input-group-text{
+    color: white;
+    background: #5bc0de;
+    border-radius: 0 100px 100px 0;
+    min-width: 120px;
+    font-weight: bold;
+    min-height: 40px;
+}
+/* newslatter end */
+
+
+
+/********************************scroll tap********************************* */
+
+#myBtn1 {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    z-index: 99;
+    font-size: 18px;
+    border: none;
+    outline: none;
+    background-color: red;
+    color: white;
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 4px;
+  }
+
+#myBtn1:hover {
+    background-color: rgb(25, 201, 207);
+  }
+/************************end here scroll tap**************** */
+
+/***************************** footer secrion *******************************/
+.footersection{
+    width: 100%;
+    height:auto;
+    padding: 100px 0 20px 0;
+    background:rgb(0, 0, 0);
+    position: relative;
+}
+.footersection p{
+    color: white;
+    text-transform: capitalize;
+}
+.footersection li a{
+    font-size: 1.2rem;
+    line-height:1.9rem;
+    font-weight:bold;
+    text-transform: capitalize;
+    
+}
+.footersection li{
+    color: white;
+    list-style: none;
+}
+.footersection h3{
+    color: rgb(226, 219, 219);
+    font-weight: bold;
+    margin-bottom: 25px;
+    text-shadow:0 2px 5px rgba(0,0,0,0.4);
+}
+.icondiv a{
+    line-height: 50px;
+    padding: 10px;
+    color:#fff!important;
+}
+.icondiv a:hover{
+    color: rgb(177, 13, 149)!important;
+}
+
+/************************************* footer section *********************/
+
+
+  
+  

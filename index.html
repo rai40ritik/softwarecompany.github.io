@@ -1,0 +1,689 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- favicon -->
+
+
+  <link rel="apple-touch-icon" sizes="57x57" href="image/favicon.pngimage/favicon.png">
+<link rel="apple-touch-icon" sizes="60x60" href="image/favicon.png">
+<link rel="apple-touch-icon" sizes="72x72" href="image/favicon.png">
+<link rel="apple-touch-icon" sizes="76x76" href="image/favicon.png">
+<link rel="apple-touch-icon" sizes="114x114" href="image/favicon.png">
+<link rel="apple-touch-icon" sizes="120x120" href="image/favicon.png">
+<link rel="apple-touch-icon" sizes="144x144" href="image/favicon.png">
+<link rel="apple-touch-icon" sizes="152x152" href="image/favicon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="image/favicon.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="image/favicon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="image/favicon.png">
+<link rel="icon" type="image/png" sizes="96x96" href="image/favicon.png">
+<link rel="icon" type="image/png" sizes="16x16" href="image/favicon.png">
+<link rel="manifest" href="image/favicon.png">
+
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+
+    <!-- end favicon -->
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="style.css">
+    <title>Website Main Page</title>
+    <style>
+        *{margin: 0px;padding: 0px;}
+        /* .ritik{
+          background-color: rgb(183, 218, 87);
+        } */
+        .callme{
+          border: 2px solid black;
+          background-color: rgb(35, 158, 62);
+          color:#fff;
+          font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+          font-weight: bold;
+          position: fixed;
+          border-right: none;
+          height: 110px;
+          width: auto;
+          top: 200px;
+          z-index: 999999;
+          writing-mode: vertical-rl; 
+          transform:rotate(180deg);
+          padding: 5px;
+          text-align: center;  
+        }
+        .whatsapp{
+          
+          position: fixed;
+          
+          top: 300px;
+          left: 1250px;
+          z-index: 999999;
+         
+        }
+        
+        /* chat css start here */
+
+        /* Button used to open the chat form - fixed at the bottom of the page */
+.open-button {
+  background-color: rgb(226, 7, 55);
+  color: white;
+  font-weight: bold;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  opacity: 0.9;
+  position: fixed;
+  bottom: 23px;
+  /* right: 28px; */
+  width: 100px;
+  z-index: 99999;
+}
+
+/* The popup chat - hidden by default */
+.chat-popup {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 100px;
+  border: 3px solid #f1f1f1;
+  z-index: 9;
+}
+
+/* Add styles to the form container */
+.form-container {
+  max-width: 300px;
+  padding: 10px;
+  background-color: white;
+}
+
+/* Full-width textarea */
+.form-container textarea {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
+  resize: none;
+  min-height: 200px;
+}
+
+/* When the textarea gets focus, do something */
+.form-container textarea:focus {
+  background-color: rgb(17, 9, 9);
+  outline: none;
+  color: white;
+  font-weight: bolder;
+}
+
+/* Set a style for the submit/send button */
+.form-container .btn {
+  background-color: #04AA6D;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom:10px;
+  opacity: 0.8;
+}
+
+/* Add a red background color to the cancel button */
+.form-container .cancel {
+  background-color: red;
+}
+
+/* Add some hover effects to buttons */
+.form-container .btn:hover, .open-button:hover {
+  opacity: 1;
+}
+            /* chat css end here */
+.navbar-toggler{
+  color: red;
+}
+    </style>
+  </head>
+  <body>
+    <div class="callme " ><a style="color: #fff; font-weight: bold; text-decoration: none;" href="contact.html">CALL ME</a></div>
+
+    <div class="whatsapp">
+      <a href="https://api.whatsapp.com/send?phone=9565625550&text=Hii I am Ritik Rai"><img src="image/WhatsApp.svg" width="90px" height="100px" alt=""></a>
+    </div>
+  
+<!-- chat code start here -->
+<button class="open-button" onclick="openForm()">Chat</button>
+
+<div class="chat-popup" id="myForm">
+  <form action="/" class="form-container">
+    
+
+    <label for="msg"><h1 style="color:darkblue;">Message</h1></label>
+    <textarea placeholder="Type message.." name="msg" required></textarea>
+
+    <button type="submit" class="btn">Send</button>
+    <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+  </form>
+</div>
+
+<script>
+function openForm() {
+  document.getElementById("myForm").style.display = "block";
+}
+
+function closeForm() {
+  document.getElementById("myForm").style.display = "none";
+}
+</script>
+<!-- chat code end here -->
+    
+
+ <!-- navbar start here*********** -->
+ 
+    <nav class="navbar navbar-expand-lg ">
+      <!-- <a class="navbar-brand text-uppercase" href="#">freelancer</a> -->
+      <a class="navbar-brand" href="index.html">
+        <img src="image/logo.png" width="100" height="50" alt="">
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse text-uppercase " id="navbarNav">
+        <ul class="navbar-nav ml-auto ">
+          <li class="nav-item active">
+            <a class="nav-link" href="index.html">Home <span class="sr-only"></span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="about.html">About Us</a>
+          </li>
+         
+          <li class="nav-item">
+              <a class="nav-link" href="contact.html">Contact us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="faq.html">FAQ</a>
+            </li>
+        </ul>
+        <div class="nav-item ">
+          <button class="btn btn-warning" data-toggle="modal" data-target="#loginModal">Login</button>
+          <button class="btn btn-warning" data-toggle="modal" data-target="#signupModal">SignUp</button>
+      </div>
+      </div>
+    </nav>
+    <!-- navbar end here*********** -->
+
+    <div class="freelencer ">
+      
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-12 text-center pt-5 mb-5">
+                    <h1 style="font-weight: bold; color: white;">Freelancer Template</h1>
+                    <p style="padding-top: 30px; color: white;">Freelancer CMS is the perfect tool for the Independent Creative who wants to stand out with a bold, beautiful and easy to use template.</p>
+                </div>
+                <div class=" col-md-12  col-12  ">
+                
+                <form class="form-inline mb-5"   action="#">
+                  
+                  <div class="text-center m-auto">
+                    <input type="email" class="form-controls m-2" placeholder="Enter email" id="email">
+                  
+                  <input type="password" class="form-controls " placeholder="Enter password" id="pwd">
+                  <button type="submit" class="btns m-2" id="name" style="background-color: rgb(250, 25, 92); width: 170px;">Subscribe</button>
+                  </div>
+                </div>
+              
+                </form>
+              
+              </div>
+        </div>
+  </div>
+
+  <!--Login Modal -->
+   <div class="modal fade rai" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">RitikRai</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <form>
+                <div class="form-groups">
+                  <label for="exampleInputEmail1">Email address</label>
+                  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                  <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                </div>
+                <div class="form-groups">
+                  <label for="exampleInputPassword1">Password</label>
+                  <input type="password" class="form-control" id="exampleInputPassword1">
+                </div>
+                <div class="form-groups form-check">
+                  <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                  <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                </div>
+                <button type="submit" class="btn btn-primary">Login</button>
+              </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> 
+        </div>
+      </div>
+    </div>
+  </div> 
+        <!-- Sign Up Modal -->
+  <div class="modal fade rai" id="signupModal" tabindex="-1" role="dialog" aria-labelledby="signupModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Get an Account</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <form>
+                <div class="form-groups">
+                  <label for="exampleInputEmail1">Email address</label>
+                  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                  <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                </div>
+                <div class="form-groups">
+                  <label for="exampleInputPassword1">Password</label>
+                  <input type="password" class="form-control" id="exampleInputPassword1">
+                </div>
+                <div class="form-groups">
+                  <label for="cexampleInputPassword1">Confirm Password</label>
+                  <input type="password" class="form-control" id="cexampleInputPassword1">
+                </div>
+                 
+                <button type="submit" class="btn btn-primary">Creat Account</button>
+              </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> 
+        </div>
+      </div>
+    </div>
+  </div> 
+
+  
+<!-- header code end here********* -->
+                              <!-- Three extra div start here *************** -->
+     <div class="extradiv pt-5">
+      <div class="container">
+        <div class="row pt-5">
+            <div class="col-lg-12 col-md-12 col-12 mb-5 text-center">
+              <h1 style="font-weight: bold; color: darkblue; font-family: 'Gill Sans', sans-serif;">Our Services</h1>
+              <p style="color: rgb(51, 51, 145); font-size: 18px;">I build templates to impress and to be practical</p>
+             </div>
+             </div>
+       
+          <div class="row text-center mb-5">
+            <div class=" extra-div col-lg-4 col-md-4 col-12  text-center">
+              <img src="image/about1.png" class="rounded img-responsive" alt="...">
+            <h2>Design</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorum, quasi.
+            </p>
+            </div>
+            <div class="extra-div col-lg-4 col-md-4 col-12  text-center">
+              <img src="image/about2.png" class="rounded img-responsive" alt="...">
+            <h2>Consulting</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna. Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis, vero.</p>
+            </div>
+            <div class="  extra-div col-lg-4 col-md-4 col-12  text-center">
+              <img src="image/about1.png" class="rounded img-responsive" alt="...">
+            <h2>Development</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magni, fugit.</p>
+            </div>
+          </div>
+      </div>
+  </div>
+     </div>
+
+     <!-- Three extra div end here *************** -->
+
+           <!-- featherdiv start here********************** -->
+
+       <div class="threediv" id="three-div">
+         <div class="container">
+           <div class="row">
+            <div  class="temp col-lg-12 col-md-12  col-12 text-center">
+              <h1 style="margin-bottom:10px; font-weight: bold; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;" >Featured Works</h1>
+              <p style="margin-bottom: 70px; font-size: 20px; color: rgb(212, 202, 202);">My last Featured Works</p>
+              </div>
+            </div>
+                  <div class="row" >
+                    <div class="three-div col-lg-4 col-md-4 col-12 text-center" >
+                       <img src="image/movie.png" class="rounded  img-fluid " alt="movie" width="320" height="350" > 
+                       <h4>Movie Lettering</h4>
+                       <p>We build templates to impress and to be practical</p>
+                    </div>  
+                    <div class="three-div col-lg-4 col-md-4 col-12 text-center">
+                      <img src="image/web.png" class="rounded  img-fluid" alt="movie" width="320" height="350"> 
+                      <h4>Web Design</h4>
+                      <p>We build templates to impress and to be practical</p>
+                    </div> 
+                    <div class="three-div col-lg-4 col-md-4 col-12 text-center ">
+                      <img src="image/cartel.png" class="rounded img-fluid" alt="movie" width="320" height="350"> 
+                      <h4>Cartel Design</h4>
+                      <p>We build templates to impress and to be practical</p>
+                    </div> 
+                    <div class=" col-lg-12 col-12 col-md-12 text-center mb-5 ">
+                      <button type="button" class="btns" id="name" style="width: 150px;">My Works</button>
+                    </div>
+
+
+                  </div>
+
+          </div>
+        </div>  
+
+        <!-- featherdiv end  here******************** -->
+
+
+
+<!--************************************about me code start here******************** -->
+
+
+
+<div class="aboutme pt-5 mb-5" id="aboutdiv">
+  <div class="container">
+    <div class="row">
+      <div class="imgs col-md-6 col-12 ">
+        <img src="image/aboutme.jpg" class="img-fluid pt-2  mb-3 " alt="movie"  > 
+      </div>
+      <div class="img col-lg-6 col-md-6 col-12 ">
+        <h1 style="text-align:center;">About Me</h1>
+        <h3 style="text-align:center;">Freelance Art Director Since 2015</h3>
+        <p style="text-align: left;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quia, animi! Lorem ipsum dolor sit amet<br></p> 
+        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+      </div>
+    </div>
+    <div class="row pt-5 text-center art">
+      <div class="col-lg-6 col-md-6 col-12 col-sm-6 text-center">
+        <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+        <h2 style="font-weight: bold; color: darkblue;">Skills</h2>
+        <ul style="text-align: left;">
+         <li>Art Director</li>
+        <li>Interface Designer</li>
+        <li>Webflow Developer</li>
+        <li>Illustrator</li>
+        <li>Hand Lettering</li>
+        </ul>
+      <div class="mb-5 ">
+        <button type="button" class="btns" id="name" style="text-align: left;">Contact Me</button>
+      </div>
+       </div>
+       <div class="col-lg-6 col-md-6 col-12 ">
+        <img src="image/sea.jpg" class="img-fluid pt-2 heigh mb-3"  alt="movie"  > 
+        </div>
+
+      </div>
+  </div>
+</div>
+
+
+<!--************************************************about me code  end here******************** -->
+
+
+<!--*******************************clinets code start here****************************-->
+
+<div class="clients">
+  <div class="container">
+    <div class="row">
+      <div  class="clinets-div col-lg-6 col-md-6  col-12 ">
+       <h1 style=" font-weight: bold; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; color:#fff" >Clients</h1>
+       <h2 style=" font-weight: bold; font-size: 22px; color: rgb(255, 255, 255); text-align: left;">What my clients are saying about my <br> work.</h2>
+       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+         Duis aute irure dolor in reprehenderit in voluptate. Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita, quisquam, impedit optio explicabo suscipit nam numquam quia recusandae dolores itaque doloremque aut ullam a fugit.</p>
+       <div class=" col-lg-12 col-12 col-md-12  ">
+        <button onclick="myFunction()" class="btns myBtn" id="name">Read More</button>
+      </div> 
+      </div>
+      <div class="col-lg-3 col-md-3 col-12 col-sm-4 text-center">
+        <img src="image/marco.png" class="img-fluid pt-2  mb-3"  style="height: 400px; width: 250px;" alt="movie"  > 
+        </div>
+        <div class="col-lg-3 pt-5 col-md-3 col-12 col-sm-4 text-center">
+          <img src="image/megan.png" class="img-fluid pt-2  mb-3"  style="height: 400px; width: 250px;" alt="movie"> 
+        </div>
+        
+      </div>
+
+    </div>   
+    </div>
+   
+
+<!--**********************************************clinets code end here**********************************-->
+
+
+<!--*************************************** work code start here *************************-->
+<div class="workdiv pt-5">
+  <div class="container">
+    <div class="template col-lg-12  col-md-12 col-12 text-center pt-2">
+      <h1 style="font-weight: bold; color: darkblue;">How I Work</h1>
+      <p style="font-size:17px; color: rgb(80, 80, 155);">This is How I Work with new Projects</p>
+    </div>
+    <div class="row work-div">
+      <div class="col-lg-6 col-md-12 col-sm-12 col-10">
+        <h3 style="font-weight:  bold; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; color: rgb(2, 2, 112);">Clients Share Ideas And Gives Helpful Insight About His Needs</h3>
+        <p style="color: rgb(76, 82, 138);padding-top: 10px; line-height: 25px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit,sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      </div>
+      <div class="col-lg-4 col-md-4 col-4 col-4">
+        <img src="image/map.png" class="img-fluid pt-2 map mb-3 " alt="movie"  > 
+      </div>
+
+    </div>
+    <br><br>
+    <hr style="border:0.5px solid rgb(169, 188, 241);">
+      
+    <div class="row pt-5">
+      <div class="col-lg-4 col-md-4 col-4 pt-5">
+        <img src="image/bulb1.png" class="img-fluid pt-2 map mb-3 " style="float: left;" alt="movie"  > 
+      </div>
+
+      <div class="col-lg-6 col-md-12 col-sm-12 col-10 pt-5">
+        <h3 style="font-weight: bolder; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; color: rgb(2, 2, 112);">I Design And Develop a Real World Prototype</h3>
+        <p style="color: rgb(76, 82, 138);padding-top: 10px; line-height: 25px; font-size: 18px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit,sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      </div>
+
+    </div>
+    <br><br>
+    <hr style="border:0.5px solid rgb(169, 188, 241);">
+    <div class="row work-div pt-5 mb-5">
+      <div class="col-lg-6 col-md-12 col-sm-12 col-10 pt-5 mb-5">
+        <h3 style="font-weight:  bold; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; color: rgb(2, 2, 112);">Clients Shares Feedback And Chooses Best Prototype</h3>
+        <p style="color: rgb(76, 82, 138);padding-top: 10px; line-height: 25px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit,sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      </div>
+      <div class="col-lg-4 col-md-4 col-4 col-4">
+        <img src="image/medal.png" class="img-fluid pt-2 map mb-3 " alt="movie"  > 
+      </div>
+     </div>
+</div>  
+
+<!--********************************latest update code here start************************************ -->
+<div class="featherdiv">
+  <div class="container">
+    <div class="row">
+     <div  class="temp col-lg-12 col-md-12  col-12 text-center">
+       <h1 style="margin-bottom:10px; font-weight: bold; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; color: darkblue;" >Latest Updates</h1>
+       <p style="margin-bottom: 70px; font-size: 20px; color: rgb(73, 110, 230);">Take a look to my Latest Blog Posts</p>
+       </div>
+     </div>
+           <div class="row feather" >
+             <div class="feather-work col-lg-4 col-md-4 col-12 text-center" >
+                <img src="image/skill.png" class="img-fluid img-responsive" alt="movie" > 
+                <h4>Improve Your Design Skills Today</h4>
+                <p>I build templates to impress and to be practical</p>
+             </div>  
+             <div class="feather-work col-lg-4 col-md-4 col-12 text-center">
+               <img src="image/work.jpg" class="img-fluid img-responsive" alt="movie" > 
+               <h4>How to improve Web Design Process</h4>
+               <p>I build templates to impress and to be practical</p>
+             </div> 
+             <div class="feather-work col-lg-4 col-md-4 col-12 text-center ">
+               <img src="image/mensea.jpg" class="img-fluid img-responsive" alt="movie" > 
+              <h4>7 of the Best Examples of Beautiful Design</h4>
+               <p>I build templates to impress and to be practical</p>
+             </div> 
+             <div class=" col-lg-12 col-12 col-md-12 text-center pt-5 mb-5 ">
+               <button type="button" class="btns" id="name">More Posts</button>
+             </div>
+</div>
+
+           </div>
+    </div>
+
+<!--********************************contact page code start here************************************ -->
+<div class="contactpage pt-5 mb-5 " id="contactdiv">
+  <div class="container">
+    <div class="row">
+     <div  class=" col-lg-12 col-md-12 mb-5 col-12 text-center pt-5">
+      <h1 style="font-weight: bold; color: darkblue;">Contact me</h1>
+      <p style="font-size:17px; color: rgb(86, 86, 177);">Let's have our first communication</p>
+     
+    </div> 
+    </div>
+
+    <div class="row">
+      <div class="col-md-6 col-12 text-center">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d124422.0533975916!2d77.57496319999998!3d12.959743999999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1649598100743!5m2!1sen!2sin" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"  width="450"
+          height="815"></iframe>
+      </div>
+      <div class="col-md-6 col-12 contactbg">
+        <div class="text-center pt-5 ">
+        <h4 style=" font-weight: bold; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; color: rgb(255, 255, 255); text-align: left;" >Get In Touch With Me</h4>
+       <p style="margin-bottom: 70px; font-size: 17px; color: rgb(255, 255, 255); text-align: left;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididun.</p>
+       </div>
+        <form  class="">
+          <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" class="form-control p-2" placeholder="Enter your name" id="name">
+          </div>
+          <div class="form-group">
+            <label for="email">Email Address:</label>
+            <input type="email" class="form-control p-2" placeholder="Enter your email Address" id="name">
+          </div>
+          <div class="form-group">
+            <label for="comment">Comment:</label>
+            <textarea class="form-control"id="name" rows="5" placeholder="Enter your Message"></textarea>
+          </div>
+          <div class=" col-lg-12 col-12 col-md-12  pt-2 mb-2 text-center ">
+          <button type="submit" class="submit">Submit</button>
+          </div>
+        </form>
+      </div>
+
+    </div>
+  
+  </div>
+
+
+<!--********************************contact code end here************************************ -->
+
+
+
+<section class="newsletter" id="newlatterdiv">
+  <div class="container headings text-center col-md-12">
+      <h2 class="text-center font-weight-bold pt-5" style="color:#ff4d1c; font-size: 40px;font-family: Roboto, sans-serif;">Subscribe Now</h2>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.Id nobis
+        quas sunt suscipit aliquid.</p>
+    </div>
+     <div class="container">
+       <div class="row">
+         <div class="col-md-8  offset-lg-2 col-12">
+          <div class="input-group pt-3">
+             <div class="input-group">
+            <input name="email" type="email" class="form-control" placeholder="Enter your email" required="" style="padding: 10px;">
+            <button class="btn btn-success" type="submit"><i class="fa fa-paper-plane"></i></button>
+        </div>
+              
+            </div>
+          </div>  
+        </div>
+      </div>
+    </div>
+</section>
+
+
+      
+     <!--********************************* Footer code start here *****************************************************-->
+   
+      <div class="footersection" id="footerdiv">
+        <div class="container">
+            <div class="row">
+              <div class="col-lg-4 col-12 col-md-4 mb-5 text-uppercase text-center">
+                  <h3>about shivamtech</h3>
+                  <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Illum asperiores Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint, nemo nulla. Aliquam laudantium necessitatibus </p>
+              
+              <button type="button" class="btn btn-success">GET STARTED</button>
+              </div> 
+
+              <div class="links col-lg-4 col-12 col-md-4 font-weight-bold text-uppercase text-center ">
+                <h3>quick links</h3>
+                 <li><a href="">home</a></li>
+                 <li><a href="">about us</a></li>
+                  <li><a href="">services</a></li>
+                  <li><a href="">contact</a></li>
+                
+              </div>
+              <div class="col-lg-4 col-12 col-md-4  text-uppercase text-center">
+                <h3>social media</h3>
+                <p>Click on the social media icons below and stay connected with us across the web, throughout the day.</p>
+                <div class="icondiv" >
+                <a href="https://www.facebook.com"><i class="fa-2x  fa fa-facebook  " style="color:blue;" aria-hidden="true"></i></a>
+                <a href="https://www.twitter.com"><i class="fa-2x fa fa-twitter" style="color:#00acee;" aria-hidden="true"></i></a>
+                <a href=""><i class="fa-2x  fa fa-github" aria-hidden="true"></i></a>
+                <a href="#####"><i class="fa-2x fa fa-inbox"  aria-hidden="true"></i></a>
+                <a href="https://www.youtube.com"><i class="fa-2x fa fa-youtube" style="color: red;" aria-hidden="true"></i></a>
+                </div>
+              </div>  
+            </div> 
+        </div>
+        <div class="mt-5 text-center"  style="background-color: rgb(235, 183, 15); padding:10px;">
+          <p style="font-weight: bold; color: black; padding-top: 10px;">Copyright 2022 All rights reserved | This template is made with love
+            by RitikRai</p>
+        </div>
+      </div>
+     
+      <button onclick="topFunction()" id="myBtn1" title="Go to top"><i class="fa fa-arrow-up"></i></button>
+
+
+
+      <!--****************************** Footer code end here ********************************-->
+
+
+    <!-- scrolltap start here -->
+    <script>
+      //Get the button
+      var mybutton = document.getElementById("myBtn1");
+      
+      // When the user scrolls down 20px from the top of the document, show the button
+      window.onscroll = function() {scrollFunction()};
+      
+      function scrollFunction() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+          mybutton.style.display = "block";
+        } else {
+          mybutton.style.display = "none";
+        }
+      }
+      
+      // When the user clicks on the button, scroll to the top of the document
+      function topFunction() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+      }
+      </script>
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+
+</script>
+
+
+</body>
+</html>
